@@ -19,7 +19,7 @@
       </MenuItem>
       <MenuItem Header="_Run">
         <MenuItem Header="Run _Command"
-          Click="mnuRunCommand_Clock" />
+          Click="mnuRunCommand_Click" />
         />
       </MenuItem>
     </Menu>
