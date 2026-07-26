@@ -19,10 +19,7 @@
       </MenuItem>
       <MenuItem Header="_Run">
         <MenuItem Header="Run _Command"
-            Command="{Binding RunModelTaskCommand}"
-        />
-        <MenuItem Header="Clear Text"
-            Command="{Binding ClearTextCommand}"
+          Click="mnuRunCommand_Clock" />
         />
       </MenuItem>
     </Menu>
