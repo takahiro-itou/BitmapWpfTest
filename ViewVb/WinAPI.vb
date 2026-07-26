@@ -16,4 +16,17 @@ Public Function BitBlt(ByVal hDestDC As IntPtr, _
     ByVal dwRop As Integer) As Integer
 End Function
 
+<DllImport("gdi32.dll")> _
+Public Function CreateCompatibleDC(ByVal hDC As IntPtr) As IntPtr
+End Function
+
+<DllImport("gdi32.dll")> _
+Public Function DeleteDC(ByVal hDC As IntPtr) As Integer
+End Function
+
+<DllImport("gdi32.dll")> _
+Public Function SelectObject( _
+    ByVal hDC As IntPtr, ByVal hGdiObj As IntPtr) As IntPtr
+End Function
+
 End Module
