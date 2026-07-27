@@ -43,7 +43,7 @@ public  partial class  MainWindow : Window
         grpCanvas.Dispose();
 
         System.IntPtr hBitmap = imgCanvas.GetHbitmap();
-        Media.Imaging.BitmapSource  bmpSrc =
+        System.Windows.Media.Imaging.BitmapSource   bmpSrc =
             Interop.Imaging.CreateBitmapSourceFromHBitmap(
                 hBitmap, IntPtr.Zero, Int32Rect.Empty,
                 BitmapSizeOptions.FromEmptyOptions());
