@@ -1,4 +1,7 @@
 ﻿
+Imports System.Windows
+
+
 Namespace Global.ViewVb.Views
 
 Public Class MainWindow
