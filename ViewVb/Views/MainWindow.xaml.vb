@@ -50,15 +50,15 @@ Dim colorBG As System.Drawing.Color
             SRCCOPY)
     grpBuffer.ReleaseHdc(hDC)
 
-    grpBuffer.DrawRectangle(Pens.Yellow, 50, 30, 100, 60)
-    grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300)
+    grpBuffer.DrawRectangle(System.Drawing.Pens.Yellow, 50, 30, 100, 60)
+    grpBuffer.DrawPie(System.Drawing.Pens.Red, 60, 10, 80, 80, 30, 300)
     grpBuffer.Dispose()
 
     imgCanvas = New System.Drawing.Bitmap(300, 300)
     grpCanvas = System.Drawing.Graphics.FromImage(imgCanvas)
 
-    colorBG = Color.FromArgb(&H800000FF)
-    brushBG = New SolidBrush(colorBG)
+    colorBG = System.Drawing.Color.FromArgb(&H800000FF)
+    brushBG = New System.Drawing.SolidBrush(colorBG)
     ' grpCanvas.FillRectangle(brushBG, grpCanvas.VisibleClipBounds)
     grpCanvas.FillRectangle(brushBG, 0, 0, 300, 300)
 
