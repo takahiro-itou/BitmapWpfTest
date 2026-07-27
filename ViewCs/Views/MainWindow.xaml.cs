@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -32,6 +33,20 @@ public  partial class  MainWindow : Window
     private  void
     runCommand()
     {
+        Bitmap    imgCanvas = new Bitmap(300, 300);
+        Graphics  grpCanvas = Graphics.FromImage(imgCanvas);
+
+        Color       colorBG = Color.FromArgb(0x80, 0x00, 0x00, 0xff);
+        SolidBrush  brushBG = new SolidBrush(colorBG);
+        grpCanvas.FillRectangle(brushBG, 0, 0, 300, 300);
+        grpCanvas.Dispose();
+
+        System.IntPtr hBitmap = imgCanvas.GetHbitmap();
+        Media.Imaging.BitmapSource  bmpSrc =
+            Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                hBitmap, IntPtr.Zero, Int32Rect.Empty,
+                BitmapSizeOptions.FromEmptyOptions());
+        picView.Source = bmpSrc;
     }
 
     //----------------------------------------------------------------
