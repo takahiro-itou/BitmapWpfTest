@@ -34,12 +34,41 @@ public  partial class  MainWindow : Window
     private  void
     runCommand()
     {
+        IntPtr  hDisplayDC  = GetDC(IntPtr.Zero);
+
+        Bitmap    imgBuffer = new Bitmap(200, 100);
+        Graphics  grpBuffer = Graphics.FromImage(imgBuffer);
+
+        Color       colorBG = Color.FromArgb(0xFF, 0xFE, 0xF0, 0xBA);
+        SolidBrush  brushBG = new SolidBrush(colorBG);
+        grpBuffer.FillRectangle(brushBG, 0, 0, 200, 100);
+
+        IntPtr  hDC = grpBuffer.GetHdc();
+        BitBlt(hDC, 8, 8, 184, 84, hDisplayDC<
+            SystemParameters.PrimaryScreenWidth - 184,
+            SystemParameters.PrimaryScreenHeight - 84,
+            SRCCOPY);
+        grpBuffer.ReleaseHdc(hDC);
+
+        grpBuffer.DrawRectangle(Pens.Yello, 50, 30, 100, 60);
+        grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
+        grpBuffer.Dispose();
+
         Bitmap    imgCanvas = new Bitmap(300, 300);
         Graphics  grpCanvas = Graphics.FromImage(imgCanvas);
 
-        Color       colorBG = Color.FromArgb(0x80, 0x00, 0x00, 0xff);
-        SolidBrush  brushBG = new SolidBrush(colorBG);
+        colorBG = Color.FromArgb(0x80, 0x00, 0x00, 0xff);
+        brushBG = new SolidBrush(colorBG);
         grpCanvas.FillRectangle(brushBG, 0, 0, 300, 300);
+        grpCanvas.Dispose();
+
+        hDC = grpCanvas.GetHdc();
+        BitBlt(hDC, 8, 8, 284, 284, hDisplayDC, 0, 0, SRCCOPY);
+        grpCanvas.ReleaseHdc(hDC);
+
+        ReleaseDC(IntPtr.Zero, hDisplayDC);
+
+        grpCanvas.DrawImage(imgBuffer, 50, 100, 200, 100);
         grpCanvas.Dispose();
 
         System.IntPtr hBitmap = imgCanvas.GetHbitmap();
