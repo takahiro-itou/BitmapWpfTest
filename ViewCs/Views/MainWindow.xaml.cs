@@ -1,5 +1,6 @@
 ﻿
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 using ViewCs;
 
@@ -23,6 +24,33 @@ public  partial class  MainWindow : Window
         this.DataContext = this.m_viewModel;
     }
 
+
+    //----------------------------------------------------------------
+    /**   指定したコマンドを実行する。
+    **
+    **/
+    private  void
+    runCommand()
+    {
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **/
+    private  void  mnuFileExit_Click(object sender, EventArgs e)
+    {
+        System.Windows.Application.Current.Shutdown();
+    }
+
+    //----------------------------------------------------------------
+    /**
+    **
+    **
+    private  void  mnuRunCommand_Click(object sender, EventArgs e)
+    {
+        runCommand();
+    }
 
     private Models.SampleModel          m_taskModel;
     private ViewModels.SampleViewModel  m_viewModel;

@@ -19,7 +19,7 @@
       </MenuItem>
       <MenuItem Header="_Run">
         <MenuItem Header="Run _Command"
-            Command="{Binding RunModelTaskCommand}"
+          Click="mnuRunCommand_Click" />
         />
         <MenuItem Header="Clear Text"
             Command="{Binding ClearTextCommand}"
@@ -28,7 +28,7 @@
     </Menu>
 
     <StackPanel Orientation="Vertical">
-      <Image Name="picView" Stretch="None" />
+      <Image x:Name="picView" Stretch="None" />
     </StackPanel>
   </DockPanel>
 
