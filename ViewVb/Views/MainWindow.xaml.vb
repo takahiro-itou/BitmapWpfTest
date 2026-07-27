@@ -45,8 +45,8 @@ Dim colorBG As System.Drawing.Color
 
     hDC = grpBuffer.GetHdc()
     BitBlt(hDC, 8, 8, 184, 84, hDisplayDC,
-            Screen.PrimaryScreen.Bounds.Width - 184,
-            Screen.PrimaryScreen.Bounds.Height - 84,
+            SystemParameters.PrimaryScreenWidth - 184,
+            SystemParameters.PrimaryScreenHeight - 84,
             SRCCOPY)
     grpBuffer.ReleaseHdc(hDC)
 
