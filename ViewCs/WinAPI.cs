@@ -6,6 +6,8 @@ namespace  ViewCs  {
 public  class  WinAPI
 {
 
+public  static  const  int  SRCCOPY = 0xCC0020;
+
 [DllImport("gdi32.dll")]
 public  static  extern  int  BitBlt(
     System.IntPtr hDestDC,
@@ -14,6 +16,17 @@ public  static  extern  int  BitBlt(
     System.IntPtr hSrcDC,
     int xSrc, int ySrc,
     int dwRop
+);
+
+[DllImport("user32.dll")]
+public  static  extern  System.IntPtr  GetDC(
+    System.IntPtr hWnd
+);
+
+[DllImport("user32.dll")]
+public  static  extern  System.IntPtr  ReleaseDC(
+    System.IntPtr hWnd,
+    System.IntPtr hDC
 );
 
 }   //  End class  WinAPI
