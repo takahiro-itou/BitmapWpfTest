@@ -34,7 +34,7 @@ public  partial class  MainWindow : Window
     private  void
     runCommand()
     {
-        IntPtr  hDisplayDC  = GetDC(IntPtr.Zero);
+        IntPtr  hDisplayDC  = WinAPI.GetDC(IntPtr.Zero);
 
         Bitmap    imgBuffer = new Bitmap(200, 100);
         Graphics  grpBuffer = Graphics.FromImage(imgBuffer);
@@ -44,13 +44,13 @@ public  partial class  MainWindow : Window
         grpBuffer.FillRectangle(brushBG, 0, 0, 200, 100);
 
         IntPtr  hDC = grpBuffer.GetHdc();
-        BitBlt(hDC, 8, 8, 184, 84, hDisplayDC<
+        WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC<
             SystemParameters.PrimaryScreenWidth - 184,
             SystemParameters.PrimaryScreenHeight - 84,
-            SRCCOPY);
+            WinAPI.SRCCOPY);
         grpBuffer.ReleaseHdc(hDC);
 
-        grpBuffer.DrawRectangle(Pens.Yello, 50, 30, 100, 60);
+        grpBuffer.DrawRectangle(Pens.Yellow, 50, 30, 100, 60);
         grpBuffer.DrawPie(Pens.Red, 60, 10, 80, 80, 30, 300);
         grpBuffer.Dispose();
 
@@ -63,10 +63,10 @@ public  partial class  MainWindow : Window
         grpCanvas.Dispose();
 
         hDC = grpCanvas.GetHdc();
-        BitBlt(hDC, 8, 8, 284, 284, hDisplayDC, 0, 0, SRCCOPY);
+        WinAPI.BitBlt(hDC, 8, 8, 284, 284, hDisplayDC, 0, 0, WinAPI.SRCCOPY);
         grpCanvas.ReleaseHdc(hDC);
 
-        ReleaseDC(IntPtr.Zero, hDisplayDC);
+        WinAPI.ReleaseDC(IntPtr.Zero, hDisplayDC);
 
         grpCanvas.DrawImage(imgBuffer, 50, 100, 200, 100);
         grpCanvas.Dispose();
