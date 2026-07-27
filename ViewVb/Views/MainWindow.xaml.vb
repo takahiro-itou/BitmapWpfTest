@@ -35,6 +35,8 @@ Dim hDisplayDC As IntPtr
 Dim hDC As IntPtr
 Dim brushBG As System.Drawing.SolidBrush
 Dim colorBG As System.Drawing.Color
+Dim hBitmap As IntPtr
+Dim bmpSrc As System.Windows.Media.Imagin.BitmapSource
 
     hDisplayDC = GetDC(IntPtr.Zero)
 
@@ -73,6 +75,12 @@ Dim colorBG As System.Drawing.Color
 
     grpCanvas.DrawImage(imgBuffer, 50, 100, 200, 100)
     grpCanvas.Dispose()
+
+    hBitmap = imgCanvas.GetHbitmap()
+    bmpSrc = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+            hBitmap, IntPtr.Zero, Int32Rect.Empty,
+            BitmapSizeOptions.FromEmptyOptions())
+    picView.Source = bmpSrc
 End Sub
 
 
