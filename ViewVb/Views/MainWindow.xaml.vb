@@ -1,5 +1,6 @@
 ﻿
 Imports System.Windows
+Imports System.Windows.Media.Imaging
 
 
 Namespace Global.ViewVb.Views
@@ -36,7 +37,7 @@ Dim hDC As IntPtr
 Dim brushBG As System.Drawing.SolidBrush
 Dim colorBG As System.Drawing.Color
 Dim hBitmap As IntPtr
-Dim bmpSrc As System.Windows.Media.Imagin.BitmapSource
+Dim bmpSrc As System.Windows.Media.Imaging.BitmapSource
 
     hDisplayDC = GetDC(IntPtr.Zero)
 
