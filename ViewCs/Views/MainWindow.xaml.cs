@@ -61,7 +61,7 @@ public  partial class  MainWindow : Window
     //----------------------------------------------------------------
     /**
     **
-    **
+    **/
     private  void  mnuRunCommand_Click(object sender, EventArgs e)
     {
         runCommand();
