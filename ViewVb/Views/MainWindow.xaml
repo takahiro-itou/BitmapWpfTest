@@ -25,7 +25,7 @@
     </Menu>
 
     <StackPanel Orientation="Vertical">
-      <Image Name="picView" Stretch="None" />
+      <Image x:Name="picView" Stretch="None" />
     </StackPanel>
   </DockPanel>
 
