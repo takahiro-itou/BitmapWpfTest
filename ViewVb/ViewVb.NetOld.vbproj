@@ -15,12 +15,18 @@
   <Import Project="..\Props\OutputApps.props" />
 
   <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="10.0.*" />
   </ItemGroup>
 
   <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Commands\SimpleCommand.vb" />
     <Compile Include="Models\SampleModel.vb" />
     <Compile Include="ViewModels\SampleViewModel.vb" />
     <Compile Include="Views\MainWindow.xaml.vb" />
+    <Compile Include="WinAPI.vb" />
   </ItemGroup>
 
 </Project>
