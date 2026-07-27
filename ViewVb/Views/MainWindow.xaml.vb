@@ -30,16 +30,16 @@ Dim imgBuffer As System.Drawing.Bitmap
 Dim grpBuffer As System.Drawing.Graphics
 Dim hDisplayDC As IntPtr
 Dim hDC As IntPtr
-Dim brushBG As SolidBrush
-Dim colorBG As Color
+Dim brushBG As System.Drawing.SolidBrush
+Dim colorBG As System.Drawing.Color
 
     hDisplayDC = GetDC(IntPtr.Zero)
 
     imgBuffer = New System.Drawing.Bitmap(200, 100)
     grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer)
 
-    colorBG = Color.FromArgb(&HFFFEF0BA)
-    brushBG = New SolidBrush(colorBG)
+    colorBG = System.Drawing.Color.FromArgb(&HFFFEF0BA)
+    brushBG = New System.Drawing.SolidBrush(colorBG)
     ' grpBuffer.FillRectangle(brushBG, grpBuffer.VisibleClipBounds)
     grpBuffer.FillRectangle(brushBG, 0, 0, 200, 100)
 
