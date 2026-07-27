@@ -44,7 +44,7 @@ public  partial class  MainWindow : Window
 
         System.IntPtr hBitmap = imgCanvas.GetHbitmap();
         System.Windows.Media.Imaging.BitmapSource   bmpSrc =
-            Interop.Imaging.CreateBitmapSourceFromHBitmap(
+            System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
                 hBitmap, IntPtr.Zero, Int32Rect.Empty,
                 BitmapSizeOptions.FromEmptyOptions());
         picView.Source = bmpSrc;
