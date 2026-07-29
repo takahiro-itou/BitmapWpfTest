@@ -44,9 +44,9 @@ public  partial class  MainWindow : Window
         grpBuffer.FillRectangle(brushBG, 0, 0, 200, 100);
 
         IntPtr  hDC = grpBuffer.GetHdc();
-        WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC<
-            SystemParameters.PrimaryScreenWidth - 184,
-            SystemParameters.PrimaryScreenHeight - 84,
+        WinAPI.BitBlt(hDC, 8, 8, 184, 84, hDisplayDC,
+            (int)(SystemParameters.PrimaryScreenWidth - 184),
+            (int)(SystemParameters.PrimaryScreenHeight - 84),
             WinAPI.SRCCOPY);
         grpBuffer.ReleaseHdc(hDC);
 

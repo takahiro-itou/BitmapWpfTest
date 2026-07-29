@@ -6,7 +6,7 @@ namespace  ViewCs  {
 public  class  WinAPI
 {
 
-public  static  const  int  SRCCOPY = 0xCC0020;
+public  const  int  SRCCOPY = 0xCC0020;
 
 [DllImport("gdi32.dll")]
 public  static  extern  int  BitBlt(
